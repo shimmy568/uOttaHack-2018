@@ -11,14 +11,27 @@ const datastore = new Datastore({
 const app = express();
 
 app.use(express.static("www"));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 
 app.get('/app/login', (req, res) => {
 
 });
 
 app.post('/app/register', (req, res) => {
-    console.log(req.body);
+    let loginData = {
+        name: req.body.name,
+        healthCard: parseInt(req.body.healthNumber, 10),
+        studentNumber: parseInt(req.body.studentNumber, 10)
+    }
+    console.log("hey");
+    userManager.registerUser(datastore, loginData).then((resp) => {
+        console.log(';)');
+        res.json(resp);
+    }).catch((err) => {
+        res.json({
+            error: 'lots'
+        });
+    });
 });
 
 /*
