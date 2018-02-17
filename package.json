@@ -7,7 +7,7 @@
   "author": "me",
   "license": "NO",
   "scripts": {
-      "start": "node index.js"
+    "start": "node index.js"
   },
   "private": null,
   "dependencies": {

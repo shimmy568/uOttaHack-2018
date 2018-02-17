@@ -8,34 +8,30 @@
 </head>
 <body>
     <head>
-        <script>
-        function show(shown, hidden) {
-          document.getElementById(shown).style.display='block';
-          document.getElementById(hidden).style.display='none';
-          return false;
-        }
-        </script>
+        <link rel = "stylestuff" href = "stylestuff.css">
         </head>
 
         
         <body>
         
-          <form action="/html/tags/html_form_tag_action.cfm" method="post">
-            <div>
-            <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
-            fuck yeah 
-            </textarea>
-            </div>
-            <input type="submit" value="Submit">
-            </form>
-
-
-
+        
           <div id="Page1">
             <!-->Content of page 1<!-->
-                <h1>
-                    Health card #
-                </h1>
+                <header class = "name-header">
+                    Name
+                </header>
+                <form action="/action_page.php">
+                    <input class = "name" type="text" name="name"><br>
+                    <input class = "hcard" type="text" name="hcard"><br>
+                    <input class = "studentnum" type="text" name="studentnum"><br>
+                    <input type="submit" value="DROP IN">
+                  </form>
+                <header class = "health-number">
+                    Health Card #
+                </header>
+                <header class = "student-number">
+                    Student Card #
+                </header>
             <a href="#" onclick="return show('Page2','Page1');">Show page 2</a>
           </div>
         
