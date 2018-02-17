@@ -6,8 +6,13 @@
   "repository": "git@github.com:shimmy568/uOttaHack-2018.git",
   "author": "me",
   "license": "NO",
+  "scripts": {
+      "start": "node index.js"
+  },
   "private": null,
   "dependencies": {
-    "express": "^4.16.2"
+    "@google-cloud/datastore": "^1.3.4",
+    "express": "^4.16.2",
+    "knex": "^0.14.3"
   }
 }
