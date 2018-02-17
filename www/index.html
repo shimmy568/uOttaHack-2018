@@ -14,7 +14,8 @@
 
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-          
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>        
 
         </head>
 
@@ -23,24 +24,23 @@
         
           <div id="Page1">
             <!-->Content of page 1<!-->
-                <div class = "valign-wrapper">  
-                <form action="/action_page.php">
+
                     <div class="container">
                      <div class="col-md-offset-5 col-md-5">
 
                         <div class="form-group">
                             <label for="pwd">NAME:</label>
-                            <input class="form-control" size= "20" id="pwd" placeholder="Enter NAME ">
+                            <input class="form-control" size= "20" id="name" placeholder="Enter NAME ">
                             <span class="help-block"></span>
 
                             <div class="form-group">
                                   <label for="pwd">HEALTH CARD #:</label>
-                                    <input class="form-control" size= "20" id="pwd" placeholder="Enter HEALTH CARD # ">
+                                    <input class="form-control" size= "20" id="hCard" placeholder="Enter HEALTH CARD # ">
                                     <span class="help-block"></span>
 
                             <div class="form-group">
                                     <label for="pwd">STUDENT #:</label>
-                                     <input class="form-control" size= "20"id="pwd" placeholder="Enter STUDENT # ">
+                                     <input class="form-control" size= "20"id="sCard" placeholder="Enter STUDENT # ">
                                     <span class="help-block"></span>
                           </div>
                           </div>
@@ -48,10 +48,6 @@
 
                   <button type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
                   </div>
-
-
-                
-                </form>
                 </div>
             <a href="#" onclick="return show('Page2','Page1');">Show page 2</a>
           </div>
