@@ -1,5 +1,5 @@
-.name{
-    
-    <name class="waves-effect waves-light btn">button</name>
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
 
+.materialize-red.lighten-5 {
+  background-color: #fdeaeb !important;
 }
