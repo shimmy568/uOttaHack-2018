@@ -25,10 +25,16 @@ app.post('/app/register', (req, res) => {
     console.log(key);
 }); */
 
-userManager.loginUser(datastore, 5639445604728832).then((data) => {
+userManager.loginUser(datastore, 5649391675244544).then((data) => {
     console.log(data);
 }).catch((err) => {
     console.log(err);
 });
+
+/* userManager.removeUser(datastore, 5639445604728832).then(() => {
+    console.log('removed');
+}).catch((err) => {
+    console.error(err);
+}); */
 
 //app.listen(8080);
