@@ -10,11 +10,16 @@ function registerUser(datastore, data) {
                 {
                     name: 'student number',
                     value: data.studentNumber,
-                    excludeFromIndexes: true,
+                    excludeFromIndexes: true
                 },
                 {
-                    name: 'Health Card',
-                    value: data.healthCard
+                    name: 'Health card number',
+                    value: data.healthCard,
+                    excludeFromIndexes: true
+                },
+                {
+                    name: 'Being served by',
+                    value: -1
                 }
             ],
         };
@@ -39,11 +44,11 @@ function loginUser(datastore, key) {
                     const allUsersInWait = data[0];
                     let pos = 1;
                     allUsersInWait.forEach((user) => {
-                        if(userLoggingIn['created'] == user['created']){
+                        if (userLoggingIn['created'] == user['created']) {
                             res({
                                 spotInLine: pos
                             });
-                        }else{
+                        } else {
                             pos += 1;
                         }
                     });
@@ -55,5 +60,18 @@ function loginUser(datastore, key) {
     });
 }
 
+function removeUser(datastore, key) {
+    console.log(key);
+    return new Promise((res, rej) => {
+        let keyDel = datastore.key(['User', key]);
+        datastore.delete(keyDel).then(() => {
+            res();
+        }).catch((err) => {
+            rej(err);
+        });
+    });
+}
+
 exports.registerUser = registerUser;
 exports.loginUser = loginUser;
+exports.removeUser = removeUser;
