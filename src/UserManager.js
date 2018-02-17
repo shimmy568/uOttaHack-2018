@@ -13,6 +13,10 @@ function registerUser(datastore, data) {
                     excludeFromIndexes: true
                 },
                 {
+                    name: "Name",
+                    value: data.name
+                },
+                {
                     name: 'Health card number',
                     value: data.healthCard,
                     excludeFromIndexes: true
@@ -38,20 +42,20 @@ function loginUser(datastore, key) {
         let query = datastore.createQuery('User').filter('__key__', '=', datastore.key(['User', key]));
         datastore.runQuery(query).then((data) => {
             const tasks = data[0];
-            tasks.forEach((userLoggingIn) => {
-                let bigQuery = datastore.createQuery('User').order('created');
-                datastore.runQuery(bigQuery).then((data) => {
-                    const allUsersInWait = data[0];
-                    let pos = 1;
-                    allUsersInWait.forEach((user) => {
-                        if (userLoggingIn['created'] == user['created']) {
-                            res({
-                                spotInLine: pos
-                            });
-                        } else {
-                            pos += 1;
-                        }
-                    });
+            let userLoggingIn = tasks[0];
+            let bigQuery = datastore.createQuery('User').order('created');
+            datastore.runQuery(bigQuery).then((data) => {
+                const allUsersInWait = data[0];
+                let pos = 1;
+                allUsersInWait.forEach((user) => {
+                    console.log(user[datastore.KEY].id);
+                    if (userLoggingIn['created'] == user['created']) {
+                        res({
+                            spotInLine: pos
+                        });
+                    } else {
+                        pos += 1;
+                    }
                 });
             });
         }).catch((err) => {
