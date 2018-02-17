@@ -40,10 +40,10 @@ userManager.loginUser(datastore, 5649391675244544).then((data) => {
     console.error(err);
 }); */
 
-doctorManager.registerDoctor(datastore, 'fuck', 'this').then((id) => {
+/*doctorManager.registerDoctor(datastore, 'fuck', 'this').then((id) => {
     console.log(id);
 }).catch((err) => {
     console.error(err);
-})
+})*/
 
-//app.listen(8080);
+app.listen(8080);
