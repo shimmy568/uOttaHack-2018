@@ -1,13 +1,12 @@
-.name{
-    margin: 25px 50px 75px 100px;
+div.form
+{
+    display: block;
+    text-align: center;
 }
-
-.form-textbox {
-
-    height: 25px !important;
-    
-    width: 220px !important;
-    
-    font-size: 14px !important;
-    
-    }
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}

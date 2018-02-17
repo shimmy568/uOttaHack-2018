@@ -53,10 +53,12 @@ doctorManager.registerDoctor(datastore, 'fuck', 'this').then((id) => {
 })
 */
 
+/*
 doctorManager.getNextPatient(datastore, 'fuck', 'this').then((shit) => {
     console.log(shit);
 }).catch((err) => {
     console.error(err);
 });
+*/
 
-//app.listen(8080);
+app.listen(8080);
