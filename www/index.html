@@ -13,30 +13,31 @@
 
         
         <body>
-        
-        
           <div id="Page1">
             <!-->Content of page 1<!-->
                 <header class = "name-header">
                     Name
                 </header>
-                <form action="/action_page.php">
-                    <input class = "name" type="text" name="name"><br>
-                    <input class = "hcard" type="text" name="hcard"><br>
-                    <input class = "studentnum" type="text" name="studentnum"><br>
-                    <input type="submit" value="DROP IN">
-                  </form>
                 <header class = "health-number">
                     Health Card #
                 </header>
                 <header class = "student-number">
                     Student Card #
                 </header>
+                <form action="/action_page.php">
+                    <input class = "name" type="text" name="name"><br>
+                    <input class = "hcard" type="text" name="hcard"><br>
+                    <input class = "studentnum" type="text" name="studentnum"><br>
+                    <input class = "submitbutton" type="submit" value="DROP IN">
+                  </form>
             <a href="#" onclick="return show('Page2','Page1');">Show page 2</a>
           </div>
         
           <div id="Page2" style="display:none">
             <!-->Content of page 2<!-->
+                <header class = "spot">
+                    Spot In Line:
+                </header>
 
             <a href="#" onclick="return show('Page1','Page2');">Show page 1</a>
           </div>
