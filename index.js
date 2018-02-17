@@ -1,6 +1,7 @@
 const express = require("express");
 const Datastore = require("@google-cloud/datastore");
 const userManager = require("./src/UserManager.js");
+const doctorManager = require("./src/DoctorManager.js");
 
 const datastore = new Datastore({
     keyFilename: "./keyfile.json"
@@ -30,7 +31,8 @@ userManager.loginUser(datastore, 5649391675244544).then((data) => {
     console.log(data);
 }).catch((err) => {
     console.log(err);
-}); */
+});
+*/
 
 /* userManager.removeUser(datastore, 5639445604728832).then(() => {
     console.log('removed');
@@ -38,4 +40,10 @@ userManager.loginUser(datastore, 5649391675244544).then((data) => {
     console.error(err);
 }); */
 
-app.listen(8080);
+doctorManager.registerDoctor(datastore, 'fuck', 'this').then((id) => {
+    console.log(id);
+}).catch((err) => {
+    console.error(err);
+})
+
+//app.listen(8080);
