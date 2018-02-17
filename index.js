@@ -24,11 +24,11 @@ app.post('/app/register', (req, res) => {
 }).then((key) => {
     console.log(key);
 }); */
-
+/*
 userManager.loginUser(datastore, 5639445604728832).then((data) => {
     console.log(data);
 }).catch((err) => {
     console.log(err);
-});
+}); */
 
-//app.listen(8080);
+app.listen(8080);
