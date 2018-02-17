@@ -9,6 +9,13 @@
 <body>
     <head>
         <link rel = "stylestuff" href = "stylestuff.css">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+          
+
         </head>
 
         
@@ -21,17 +28,34 @@
                     Name
                 </header>
                 <form action="/action_page.php">
-                    <input class = "name" type="text" name="name"><br>
-                    <input class = "hcard" type="text" name="hcard"><br>
-                    <input class = "studentnum" type="text" name="studentnum"><br>
-                    <input type="submit" value="DROP IN">
-                  </form>
-                <header class = "health-number">
-                    Health Card #
-                </header>
-                <header class = "student-number">
-                    Student Card #
-                </header>
+                    <div class="container">
+                     <div class="col-md-offset-5 col-md-5">
+
+                        <div class="form-group">
+                            <label for="pwd">NAME:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter NAME ">
+                            <span class="help-block"></span>
+
+                            <div class="form-group">
+                                    <label for="pwd">HEALTH CARD #:</label>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter HEALTH CARD # ">
+                                    <span class="help-block"></span>
+
+                            <div class="form-group">
+                                    <label for="pwd">STUDENT #:</label>
+                                     <input type="password" class="form-control" id="pwd" placeholder="Enter STUDENT # ">
+                                    <span class="help-block"></span>
+                          </div>
+                          </div>
+
+
+                  <button type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
+                  </div>
+
+
+                
+                </form>
+              
             <a href="#" onclick="return show('Page2','Page1');">Show page 2</a>
           </div>
         

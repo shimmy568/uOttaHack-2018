@@ -1,5 +1,13 @@
 .name{
-    
-    <name class="waves-effect waves-light btn">button</name>
-
+    margin: 25px 50px 75px 100px;
 }
+
+.form-textbox {
+
+    height: 25px !important;
+    
+    width: 220px !important;
+    
+    font-size: 14px !important;
+    
+    }
