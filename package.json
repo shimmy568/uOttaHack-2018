@@ -1,0 +1,13 @@
+{
+  "name": "uOttaHack-2018",
+  "version": "1.0.0",
+  "description": "fuck you",
+  "main": "index.js",
+  "repository": "git@github.com:shimmy568/uOttaHack-2018.git",
+  "author": "me",
+  "license": "NO",
+  "private": null,
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
