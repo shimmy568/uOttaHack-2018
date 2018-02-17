@@ -1,5 +1,13 @@
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
-
-.materialize-red.lighten-5 {
-  background-color: #fdeaeb !important;
+.name{
+    margin: 25px 50px 75px 100px;
 }
+
+.form-textbox {
+
+    height: 25px !important;
+    
+    width: 220px !important;
+    
+    font-size: 14px !important;
+    
+    }
