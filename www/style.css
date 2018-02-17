@@ -1,12 +1,11 @@
 div.form
 {
-    display: block;
-    text-align: center;
+    display: table;
+    width: 80%;
 }
 form
 {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
 }
