@@ -24,6 +24,10 @@ function registerDoctor(datastore, username, password) {
 function getNextPatient(datastore, username, password) {
     return new Promise((res, rej) => {
         loginDoctor(datastore, username, password).then((id) => {
+            if(id == null){
+                res(false);
+                return;
+            }
             let query = datastore.createQuery('User')
                 .filter('Being served by', '=', -1)
                 .order('created');
@@ -58,11 +62,15 @@ function loginDoctor(datastore, username, password) {
                 res(null);
                 return;
             }
-            res(user[Datastore.KEY].id);
+            res(user[datastore.KEY].id);
         }).catch((err) => {
             rej(err);
         });
     });
+}
+
+function finishServe(datastore, username, password){
+    
 }
 
 exports.registerDoctor = registerDoctor;
