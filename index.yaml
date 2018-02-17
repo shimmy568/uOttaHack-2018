@@ -1,0 +1,7 @@
+indexes:
+
+- kind: User
+  properties:
+    - name: Being served by
+    - name: created
+      direction: asc

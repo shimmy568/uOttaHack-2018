@@ -43,12 +43,11 @@ function loginUser(datastore, key) {
         datastore.runQuery(query).then((data) => {
             const tasks = data[0];
             let userLoggingIn = tasks[0];
-            let bigQuery = datastore.createQuery('User').order('created');
+            let bigQuery = datastore.createQuery('User').filter('Being served by', '=', -1).order('created');
             datastore.runQuery(bigQuery).then((data) => {
                 const allUsersInWait = data[0];
                 let pos = 1;
                 allUsersInWait.forEach((user) => {
-                    console.log(user[datastore.KEY].id);
                     if (userLoggingIn['created'] == user['created']) {
                         res({
                             spotInLine: pos

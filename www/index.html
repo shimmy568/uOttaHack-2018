@@ -1,66 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SUCK BIG COCK</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="script.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
 </head>
+
 <body>
-    <head>
-        <link rel = "style" href = "style.css">
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>        
+    <div id="Page1">
+        <!-->Content of page 1
+        <!-->
 
-        </head>
+        <div class="container">
+            <div class="col-md-offset-5 col-md-5">
 
-        
-        
-        
-          <div id="Page1">
-            <!-->Content of page 1<!-->
+                <div class="form-group">
+                    <label for="pwd">NAME:</label>
+                    <input class="form-control" size="20" id="name" placeholder="Enter NAME ">
+                    <span class="help-block"></span>
 
-                    <div class="container">
-                     <div class="col-md-offset-5 col-md-5">
+                    <div class="form-group">
+                        <label for="pwd">HEALTH CARD #:</label>
+                        <input class="form-control" type="number" size="20" id="hCard" placeholder="Enter HEALTH CARD # ">
+                        <span class="help-block"></span>
 
                         <div class="form-group">
-                            <label for="pwd">NAME:</label>
-                            <input class="form-control" size= "20" id="name" placeholder="Enter NAME ">
+                            <label for="pwd">STUDENT #:</label>
+                            <input class="form-control" type="number" size="20" id="sCard" placeholder="Enter STUDENT # ">
                             <span class="help-block"></span>
-
-                            <div class="form-group">
-                                  <label for="pwd">HEALTH CARD #:</label>
-                                    <input class="form-control" type = "number" size= "20" id="hCard" placeholder="Enter HEALTH CARD # ">
-                                    <span class="help-block"></span>
-
-                            <div class="form-group">
-                                    <label for="pwd">STUDENT #:</label>
-                                     <input class="form-control" type = "number" size= "20"id="sCard" placeholder="Enter STUDENT # ">
-                                    <span class="help-block"></span>
-                          </div>
-                          </div>
+                        </div>
+                    </div>
 
 
-                  <button type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
-                  </div>
+                    <button onclick="dropin()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
                 </div>
+            </div>
             <a href="#" onclick="return show('Page2','Page1');">Show page 2</a>
-          </div>
-        
-          <div id="Page2" style="display:none">
-            <!-->Content of page 2<!-->
-                <header class = "spot">
-                    Spot In Line:
-                </header>
+        </div>
+
+        <div id="Page2" style="display:none">
+            <!-->Content of page 2
+            <!-->
+            <header class="spot">
+                Spot In Line:
+            </header>
 
             <a href="#" onclick="return show('Page1','Page2');">Show page 1</a>
-          </div>
-        
-        </body>
+        </div>
+
 </body>
+
 </html>
