@@ -21,58 +21,45 @@
 
 <body>
 
-    <div id="Page1" style="display:none">
-
-        <div class="centerDivMain">
-
-            <div class="center-align centerDivMain valign-wrapper">
-
-
-                <div id="container">
-
-                    <div class="col-md-offset-5 col-md-5">
-
-                        <div class="input-field col s6">
-                            <input id="name" type="text" class="validate">
-                            <label for="last_name">Name</label>
-                        </div>
-
-                        <div class="input-field col s6">
-                            <label for="pwd">Health Card Number</label>
-                            <input class="form-control" type="number" size="20" id="hCard">
-                        </div>
-
-                        <div class="input-field col s6">
-                            <label for="pwd">Student Number</label>
-                            <input class="form-control" type="number" size="20" id="sCard">
-                        </div>
-                    </div>
-                    <button onclick="dropisn()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
+    <div id="main" class="valign-wrapper center-align">
+        <div id="sub">
+            <div id="Page1" style="display:none">
+                <div class="input-field col s6">
+                    <input id="name" type="text" class="validate">
+                    <label for="last_name">Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <label for="pwd">Health Card Number</label>
+                    <input class="form-control" type="number" size="20" id="hCard">
+                </div>
+                <div class="input-field col s6">
+                    <label for="pwd">Student Number</label>
+                    <input class="form-control" type="number" size="20" id="sCard">
                 </div>
             </div>
+            <button onclick="dropisn()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
         </div>
-    </div>
-
-    <div id="Page2" style="display:none">
-        <div id="line">
-            <h1 class="spot" id='spot'>
-                Spot In Line -
-                <span id='count'></span>
-            </h1>
-            <h1 class="spot" id='wait'>
-                Estimated Wait Time -
-                <span id='waitTime'></span>
-            </h1>
-        </div>
-        <div id="noLine" style="display:none">
-            <h1 class "spot" id='room'>
-                Room Number -
-                <span id='roomNum'></span>
-            </h1>
-            <h1 class "spot" id='doc'>
-                Doctor Name -
-                <span id='docName'></span>
-            </h1>
+        <div id="Page2" style="display:none">
+            <div id="line">
+                <h1 class="spot" id='spot'>
+                    Spot In Line -
+                    <span id='count'></span>
+                </h1>
+                <h1 class="spot" id='wait'>
+                    Estimated Wait Time -
+                    <span id='waitTime'></span>
+                </h1>
+            </div>
+            <div id="noLine" style="display:none">
+                <h1 class "spot" id='room'>
+                    Room Number -
+                    <span id='roomNum'></span>
+                </h1>
+                <h1 class "spot" id='doc'>
+                    Doctor Name -
+                    <span id='docName'></span>
+                </h1>
+            </div>
         </div>
     </div>
 
