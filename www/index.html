@@ -11,7 +11,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    
+
     <script src="script.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -22,48 +22,52 @@
 <body>
 
     <div id="Page1" style="display:none">
-        <!-->Content of page 1
-        <!-->
 
-        <div class="container">
-            <div class="col-md-offset-5 col-md-5">
+        <div class="centerDivMain">
 
-                <div class="form-group"></div>
-                    <label for="pwd">NAME:</label>
-                    <input class="form-control" size="20" id="name" placeholder="Enter NAME ">
-                    <span class="help-block"></span>
+            <div class="container">
+                <div class="col-md-offset-5 col-md-5">
 
-                    <div class="form-group">
-                        <label for="pwd">HEALTH CARD #:</label>
-                        <input class="form-control" type="number" size="20" id="hCard" placeholder="Enter HEALTH CARD # ">
-                        <span class="help-block"></span>
 
-                        <div class="form-group">
-                            <label for="pwd">STUDENT #:</label>
-                            <input class="form-control" type="number" size="20" id="sCard" placeholder="Enter STUDENT # ">
-                            <span class="help-block"></span>
-                        </div>
+                    <div class="input-field col s6">
+                        <input id="name" type="text" class="validate">
+                        <label for="last_name">Name</label>
                     </div>
-                    <button onclick="dropin()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
+
+                    <div class="input-field col s6">
+                        <label for="pwd">Health Card Number</label>
+                        <input class="form-control" type="number" size="20" id="hCard">
+                    </div>
+
+                    <div class="input-field col s6">
+                        <label for="pwd">Student Number</label>
+                        <input class="form-control" type="number" size="20" id="sCard">
+                    </div>
                 </div>
             </div>
+            <button onclick="dropin()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
         </div>
     </div>
+
     <div id="Page2" style="display:none">
         <div id="line">
             <h1 class="spot" id='spot'>
-                Spot In Line - <span id='count'></span>
+                Spot In Line -
+                <span id='count'></span>
             </h1>
             <h1 class="spot" id='wait'>
-                Estimated Wait Time - <span id='waitTime'></span>
+                Estimated Wait Time -
+                <span id='waitTime'></span>
             </h1>
         </div>
         <div id="noLine" style="display:none">
             <h1 class "spot" id='room'>
-                Room Number - <span id='roomNum'></span>
+                Room Number -
+                <span id='roomNum'></span>
             </h1>
             <h1 class "spot" id='doc'>
-                Doctor Name - <span id='docName'></span>
+                Doctor Name -
+                <span id='docName'></span>
             </h1>
         </div>
     </div>
