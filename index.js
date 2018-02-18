@@ -29,6 +29,16 @@ app.get('/app/update', (req, res) => {
     }
 });
 
+app.get('/app/queueLength', (req, res) => {
+    userManager.getQueueLength(datastore).then((len) => {
+        res.json(len);
+    }).catch((err) => {
+        res.json({
+            errors: 'lots'
+        });
+    });
+});
+
 app.get('/app/docLoggedIn', (req, res) => {
     if(req.cookies.docLogin != null){
         res.json(true);

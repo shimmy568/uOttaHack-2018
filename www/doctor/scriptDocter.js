@@ -41,9 +41,9 @@ function callNextIn() {
         type: "POST",
         url: '/app/docNext',
         success: function (data) {
-            if(data === false){
+            if (data === false) {
                 setInfoVis(false);
-            }else{
+            } else {
                 setInfoVis(true);
                 document.getElementById('name').innerText = data.Name;
                 document.getElementById('studentNumber').innerText = data['student number'];
@@ -69,7 +69,7 @@ function setDoctorPanelVis(state) {
     }
 };
 
-function setInfoVis(state){
+function setInfoVis(state) {
     if (state) {
         document.getElementById('infoDiv').style.display = 'block';
     } else {
@@ -77,4 +77,24 @@ function setInfoVis(state){
     }
 }
 
+function updateQueueLength() {
+    $.ajax({
+        type: "GET",
+        url: '/app/queueLength',
+        success: function (data) {
+            if(data == 0){
+                document.getElementById('queueLen').innerText = "There is nobody waiting";
+            }else if(data == 1){
+                document.getElementById('queueLen').innerText = "There is 1 person waiting";
+            } else {
+                document.getElementById('queueLen').innerText = "There are " + data + " person waiting";
+            }
+            setTimeout(() => {
+                updateQueueLength();
+            }, 1000);
+        }
+    });
+}
+
+updateQueueLength();
 checkLoginStatus();
