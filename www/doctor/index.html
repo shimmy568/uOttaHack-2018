@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="styledoctor.css">
 
-    <script src="script.js"></script>
+    <script src="scriptDocter.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
@@ -21,13 +21,19 @@
 
 <body>
     <div class="centerDivMain">
-        <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Username</label>
+        <div id="loginDiv" class="twoChoice">
+            <div class="input-field col s6">
+                <input id="username" type="text" class="validate">
+                <label for="last_name">Username</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="password" type="text" class="validate">
+                <label type="password" for="last_name">Password</label>
+            </div>
+            <a onclick="login()" class="waves-effect waves-light btn">Log In</a>
         </div>
-        <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label type="password" for="last_name">Password</label>
+        <div id="doctorDiv" class="twoChoice">
+            <h1>DocTorShit</h1>
         </div>
     </div>
 </body>

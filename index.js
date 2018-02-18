@@ -29,10 +29,22 @@ app.get('/app/update', (req, res) => {
     }
 });
 
-app.get('/app/docLogin', (req, res) => {
+app.get('/app/docLoggedIn', (req, res) => {
+    if(req.cookies.docLogin != null){
+        res.json(true);
+    }else{
+        res.json(false);
+    }
+});
+
+app.post('/app/docLogin', (req, res) => {
     doctorManager.loginDoctor(datastore, req.body.username, req.body.password).then((id) => {
-        res.cookie('docLogin', username + ":" + password, {httpOnly: true});
-        res.json('done');
+        if(id == null){
+            res.json(false);
+            return;
+        }
+        res.cookie('docLogin', req.body.username + ":" + req.body.password, {httpOnly: true});
+        res.json(true);
     }).catch((err) => {
         console.error(err);
     });
