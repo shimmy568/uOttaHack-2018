@@ -47,7 +47,7 @@ function loginUser(datastore, key) {
                 return;
             }
             if (userLoggingIn['Being served by'] != -1) {
-                let docQu = datastore.createQuery('Doctor').filter('__key__', '=', datastore.key(['Doctor', userLoggingIn['Being served by']]));
+                let docQu = datastore.createQuery('Doctor').filter('__key__', '=', datastore.key(['Doctor', parseInt(userLoggingIn['Being served by'], 10)]));
                 datastore.runQuery(docQu).then((data) => {
                     let doc = data[0][0];
                     res({

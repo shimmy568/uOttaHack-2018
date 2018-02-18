@@ -20,10 +20,8 @@ app.get('/app/update', (req, res) => {
         res.json(false);
     }else{
         userManager.loginUser(datastore, parseInt(req.cookies.userID, 10)).then((data) => {
-            console.log(data);
             res.json(data);
         }).catch((err) => {
-            console.log(err);
             res.json({
                 error: "lots"
             });

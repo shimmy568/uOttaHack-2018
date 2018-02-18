@@ -15,7 +15,6 @@ function dropin() {
         url: '/app/register',
         data: postData,
         success: function (data) {
-            console.log(data);
             show('Page2','Page1');
             timeoutLoop();
         }
@@ -41,7 +40,6 @@ function pageLoad(){
         type: "GET",
         url: '/app/update',
         success: function (data) {
-            console.log(data);
             if (data == false){
                 show('Page1','Page2');
             }

@@ -27,7 +27,6 @@ function checkLoginStatus() {
         type: "GET",
         url: '/app/docLoggedIn',
         success: function (data) {
-            console.log(data);
             if (data) {
                 setDoctorPanelVis(true);
             } else {
