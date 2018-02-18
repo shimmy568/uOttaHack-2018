@@ -19,7 +19,7 @@ app.get('/app/login', (req, res) => {
     if(req.cookies.userID == null){
         res.json(false);
     }else{
-        userManager.loginUser(datastore, req.cookies.userID).then((data) => {
+        userManager.loginUser(datastore, parseInt(req.cookies.userID, 10)).then((data) => {
             res.json(data);
         }).catch((err) => {
             res.json({
