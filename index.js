@@ -3,6 +3,7 @@ const Datastore = require("@google-cloud/datastore");
 const userManager = require("./src/UserManager.js");
 const doctorManager = require("./src/DoctorManager.js");
 const bodyParser = require("body-parser");
+const cookieParser = require('cookie-parser')
 
 const datastore = new Datastore({
     keyFilename: "./keyfile.json"
@@ -12,7 +13,7 @@ const app = express();
 
 app.use(express.static("www"));
 app.use(bodyParser.urlencoded());
-app.use(express.cookieParser());
+app.use(cookieParser());
 
 app.get('/app/login', (req, res) => {
     if(req.cookies.userID == null){
