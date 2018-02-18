@@ -15,7 +15,7 @@ app.use(express.static("www"));
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
-app.get('/app/login', (req, res) => {
+app.get('/app/update', (req, res) => {
     if(req.cookies.userID == null){
         res.json(false);
     }else{
@@ -26,6 +26,28 @@ app.get('/app/login', (req, res) => {
                 error: "lots"
             });
         });
+    }
+});
+
+app.get('/app/docLogin', (req, res) => {
+    doctorManager.loginDoctor(datastore, req.body.username, req.body.password).then((id) => {
+        res.cookie('docLogin', username + ":" + password, {httpOnly: true});
+        res.json('done');
+    }).catch((err) => {
+        console.error(err);
+    });
+});
+
+app.post('/app/docNext', (req, res) => {
+    if(req.cookies.docLogin == null){
+        res.json({
+            errors: 'lots'
+        });
+        return;
+    }else{
+        let long = req.cookies.docLogin;
+        let username = long.slice(long.indexOf(':'))
+        let password = long.slice(long.indexOf(':') + 1, long.length);
     }
 });
 
@@ -70,7 +92,7 @@ userManager.loginUser(datastore, 5649391675244544).then((data) => {
 }); */
 
 /*
-doctorManager.registerDoctor(datastore, 'fuck', 'this').then((id) => {
+doctorManager.registerDoctor(datastore, 'Owen', 'password123', 69).then((id) => {
     console.log(id);
 }).catch((err) => {
     console.error(err);
