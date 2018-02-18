@@ -19,7 +19,7 @@
 
 <body>
 
-    <div id="Page1">
+    <div id="Page1" style = "display:none">
         <!-->Content of page 1
         <!-->
 
@@ -46,12 +46,15 @@
                 </div>
             </div>
         </div>
+        </div>
         <div id="Page2" style="display:none">
-            <!-->Content of page 2
-            <!-->
-            <header class="spot">
-                Spot In Line:
-            </header>
+
+            <h1 class="spot">
+                Spot In Line - <span id='count'></span>
+            </h1>
+            <h1 class="spot">
+                Estimated Wait Time - <span id = 'waitTime'></span>
+            </h1>
         </div>
 
 </body>
