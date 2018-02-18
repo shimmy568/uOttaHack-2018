@@ -54,6 +54,8 @@ function pageLoad(){
                     show('line', 'noLine');
                 }
                 else{
+                    document.getElementById('roomNum').innerText = data.roomNum;
+                    document.getElementById('docName').innerText = data.docName;
                     show('noLine', 'line');
                 }
             }
