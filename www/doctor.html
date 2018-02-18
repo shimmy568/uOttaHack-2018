@@ -19,7 +19,6 @@
 
 <body>
 
-    <div id="Page1" style = "display:none">
         <!-->Content of page 1
         <!-->
 
@@ -27,36 +26,17 @@
             <div class="col-md-offset-5 col-md-5">
 
                 <div class="form-group">
-                    <label for="pwd">NAME:</label>
-                    <input class="form-control" size="20" id="name" placeholder="Enter NAME ">
+                    <label for="pwd">USERNAME:</label>
+                    <input class="form-control" size="20" id="name" placeholder="Enter USERNAME ">
                     <span class="help-block"></span>
 
-                    <div class="form-group">
-                        <label for="pwd">HEALTH CARD #:</label>
-                        <input class="form-control" type="number" size="20" id="hCard" placeholder="Enter HEALTH CARD # ">
-                        <span class="help-block"></span>
-
                         <div class="form-group">
-                            <label for="pwd">STUDENT #:</label>
-                            <input class="form-control" type="number" size="20" id="sCard" placeholder="Enter STUDENT # ">
+                            <label for="pwd">PASSWORD:</label>
+                            <input class="form-control" type="number" size="20" id="sCard" placeholder="PASSWORD ">
                             <span class="help-block"></span>
                         </div>
                     </div>
-                    <button onclick="dropin()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
+                    <button onclick="dropin()" type="button" class="btn btn-default waves-effect waves-light">SUBMIT </button>
                 </div>
             </div>
         </div>
-        </div>
-        <div id="Page2" style="display:none">
-
-            <h1 class="spot">
-                Spot In Line - <span id='count'></span>
-            </h1>
-            <h1 class="spot">
-                Estimated Wait Time - <span id = 'waitTime'></span>
-            </h1>
-        </div>
-
-</body>
-
-</html>
