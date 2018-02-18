@@ -37,7 +37,6 @@ function registerUser(datastore, data) {
 
 function loginUser(datastore, key) {
     return new Promise((res, rej) => {
-        console.log(key);
         // Find the user and return the first task
         let query = datastore.createQuery('User').filter('__key__', '=', datastore.key(['User', key]));
         datastore.runQuery(query).then((data) => {
@@ -47,7 +46,6 @@ function loginUser(datastore, key) {
                 return;
             }
             let userLoggingIn = tasks[0];
-            console.log(userLoggingIn);
             let bigQuery = datastore.createQuery('User').filter('Being served by', '=', -1).order('created');
             datastore.runQuery(bigQuery).then((data) => {
                 const allUsersInWait = data[0];
