@@ -1,4 +1,4 @@
-function registerDoctor(datastore, username, password) {
+function registerDoctor(datastore, username, password, roomNum) {
     return new Promise((res, rej) => {
         const taskKey = datastore.key('Doctor');
         const entity = {
@@ -10,6 +10,10 @@ function registerDoctor(datastore, username, password) {
                 {
                     name: 'password',
                     value: password
+                },
+                {
+                    name: 'roomNum',
+                    value: roomNum
                 }
             ],
         };

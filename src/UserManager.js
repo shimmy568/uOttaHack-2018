@@ -41,25 +41,38 @@ function loginUser(datastore, key) {
         let query = datastore.createQuery('User').filter('__key__', '=', datastore.key(['User', key]));
         datastore.runQuery(query).then((data) => {
             const tasks = data[0];
-            if(tasks == []){
+            if (tasks == []) {
                 res(false);
                 return;
             }
             let userLoggingIn = tasks[0];
-            let bigQuery = datastore.createQuery('User').filter('Being served by', '=', -1).order('created');
-            datastore.runQuery(bigQuery).then((data) => {
-                const allUsersInWait = data[0];
-                let pos = 1;
-                allUsersInWait.forEach((user) => {
-                    if (userLoggingIn['created'] == user['created']) {
-                        res({
-                            spotInLine: pos
-                        });
-                    } else {
-                        pos += 1;
-                    }
+            if (userLoggingIn['Being served by'] != -1) {
+                let docQu = datastore.createQuery('Doctor').filter('__key__', '=', datastore.key(['Doctor', userLoggingIn['Being served by']]));
+                datastore.runQuery(docQu).then((data) => {
+                    let doc = data[0][0];
+                    res({
+                        docName: doc.username,
+                        roomNum: doc.roomNum
+                    });
+                }).catch((err) => {
+                    rej(err);
                 });
-            });
+            } else {
+                let bigQuery = datastore.createQuery('User').filter('Being served by', '=', -1).order('created');
+                datastore.runQuery(bigQuery).then((data) => {
+                    const allUsersInWait = data[0];
+                    let pos = 1;
+                    allUsersInWait.forEach((user) => {
+                        if (userLoggingIn['created'] == user['created']) {
+                            res({
+                                spotInLine: pos
+                            });
+                        } else {
+                            pos += 1;
+                        }
+                    });
+                });
+            }
         }).catch((err) => {
             rej(err);
         });

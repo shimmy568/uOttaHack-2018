@@ -30,7 +30,11 @@ function timeCount(s){
     let seconds = s * 425;
     let minutes = seconds / 60 | 0;
     seconds = seconds % 60;
-    document.getElementById('waitTime').innerText = minutes + ":" + seconds
+    let secondsString = seconds + '';
+    if (secondsString.length == 1){
+        secondsString = ("0" + secondsString);
+    }
+    document.getElementById('waitTime').innerText = minutes + ":" + secondsString;
 }
 function pageLoad(){
     $.ajax({
@@ -44,12 +48,13 @@ function pageLoad(){
             else{
                 show('Page2','Page1');
                 document.getElementById('count').innerText = data.spotInLine;
+                timeCount(data.spotInLine); 
+                timeoutLoop();
                 if (spotInLine != null) {
-                    timeCount(data.spotInLine); 
-                    timeoutLoop();
+                    show('line', 'noLine');
                 }
                 else{
-                    
+                    show('noLine', 'line');
                 }
             }
         }
