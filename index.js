@@ -48,6 +48,11 @@ app.post('/app/docNext', (req, res) => {
         let long = req.cookies.docLogin;
         let username = long.slice(long.indexOf(':'))
         let password = long.slice(long.indexOf(':') + 1, long.length);
+        doctorManager.getNextPatient(datastore, username, password).then((user) => {
+            res.json(user);
+        }).catch((err) => {
+            console.error(err);
+        });
     }
 });
 
