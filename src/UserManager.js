@@ -35,6 +35,18 @@ function registerUser(datastore, data) {
     });
 }
 
+function getQueueLength(datastore){
+    return new Promise((res, rej) => {
+        let query = datastore.createQuery('User').filter('Being served by', '=', -1);
+        datastore.runQuery(query).then((data) => {
+            let a = data[0];
+            res(a.length);
+        }).catch((err) => {
+            rej(err);
+        });
+    });
+}
+
 function loginUser(datastore, key) {
     return new Promise((res, rej) => {
         // Find the user and return the first task
@@ -47,7 +59,7 @@ function loginUser(datastore, key) {
                 return;
             }
             if (userLoggingIn['Being served by'] != -1) {
-                let docQu = datastore.createQuery('Doctor').filter('__key__', '=', datastore.key(['Doctor', userLoggingIn['Being served by']]));
+                let docQu = datastore.createQuery('Doctor').filter('__key__', '=', datastore.key(['Doctor', parseInt(userLoggingIn['Being served by'], 10)]));
                 datastore.runQuery(docQu).then((data) => {
                     let doc = data[0][0];
                     res({
@@ -93,3 +105,4 @@ function removeUser(datastore, key) {
 exports.registerUser = registerUser;
 exports.loginUser = loginUser;
 exports.removeUser = removeUser;
+exports.getQueueLength = getQueueLength;

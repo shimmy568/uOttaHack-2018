@@ -18,3 +18,11 @@ body{
 .panelDivs {
     display: none;
 }
+
+#queueLen{
+    font-size: 12pt;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
