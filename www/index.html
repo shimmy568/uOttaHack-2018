@@ -9,7 +9,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="style">
+
     <script src="script.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -19,7 +20,7 @@
 
 <body>
 
-    <div id="Page1" style = "display:none">
+    <div id="Page1" style="display:none">
         <!-->Content of page 1
         <!-->
 
@@ -46,16 +47,25 @@
                 </div>
             </div>
         </div>
-        </div>
-        <div id="Page2" style="display:none">
-
-            <h1 class="spot">
+    </div>
+    <div id="Page2" style="display:none">
+        <div id="line">
+            <h1 class="spot" id='spot'>
                 Spot In Line - <span id='count'></span>
             </h1>
-            <h1 class="spot">
-                Estimated Wait Time - <span id = 'waitTime'></span>
+            <h1 class="spot" id='wait'>
+                Estimated Wait Time - <span id='waitTime'></span>
             </h1>
         </div>
+        <div id="noLine" style="display:none">
+            <h1 class "spot" id='room'>
+                Room Number - <span id='roomNum'></span>
+            </h1>
+            <h1 class "spot" id='doc'>
+                Doctor Name - <span id='docName'></span>
+            </h1>
+        </div>
+    </div>
 
 </body>
 
