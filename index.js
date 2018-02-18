@@ -78,11 +78,35 @@ app.post('/app/docNext', (req, res) => {
     }
 });
 
+app.get('/app/getCurrentPatient', (req, res) => {
+    if(req.cookies.docLogin == null){
+        res.json({
+            errors: 'lots'
+        });
+        return;
+    }else{
+        let long = req.cookies.docLogin;
+        let username = long.slice(0, long.indexOf(':'))
+        let password = long.slice(long.indexOf(':') + 1, long.length);
+        doctorManager.getCurrentPatient(datastore, username, password).then((info) => {
+            if(info == null){
+                res.json(false);
+            }else{
+                res.json(info);
+            }
+        }).catch((err) => {
+            res.json({
+                errors: lots
+            });
+        });
+    }
+});
+
 app.post('/app/register', (req, res) => {
     let loginData = {
         name: req.body.name,
         healthCard: parseInt(req.body.healthNumber, 10),
-        studentNumber: parseInt(req.body.studentNumber, 10)
+        studentNumber: req.body.studentNumber
     }
     userManager.registerUser(datastore, loginData).then((resp) => {
         res.cookie('userID', resp, {httpOnly: true});

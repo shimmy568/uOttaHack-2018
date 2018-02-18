@@ -27,6 +27,21 @@ function registerDoctor(datastore, username, password, roomNum) {
     });
 }
 
+function getCurrentPatient(datastore, username, password){
+    return new Promise((res, rej) => {
+        loginDoctor(datastore, username, password).then((id) => {
+            let query = datastore.createQuery('User').filter('Being served by', '=', id);
+            datastore.runQuery(query).then((data) => {
+                res(data[0][0]);
+            }).catch((err) => {
+                rej(err);
+            });
+        }).catch((err) => {
+            rej(err);
+        });
+    });
+}
+
 function getNextPatient(datastore, username, password) {
     return new Promise((res, rej) => {
         loginDoctor(datastore, username, password).then((id) => {
@@ -95,3 +110,4 @@ function finishServe(datastore, docKey){
 exports.registerDoctor = registerDoctor;
 exports.loginDoctor = loginDoctor;
 exports.getNextPatient = getNextPatient;
+exports.getCurrentPatient = getCurrentPatient;

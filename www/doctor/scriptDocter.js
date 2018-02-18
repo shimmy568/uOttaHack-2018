@@ -53,6 +53,25 @@ function callNextIn() {
     });
 }
 
+function getCurrentPatient(){
+    $.ajax({
+        type: "GET",
+        url: '/app/getCurrentPatient',
+        success: function (data) {
+            if (data === false) {
+                setInfoVis(false);
+            } else {
+                setInfoVis(true);
+                document.getElementById('name').innerText = data.Name;
+                document.getElementById('studentNumber').innerText = data['student number'];
+                document.getElementById('healthCard').innerText = data['Health card number'];
+            }
+        }
+    });
+}
+
+getCurrentPatient();
+
 function setLoginVis(state) {
     if (state) {
         document.getElementById('loginDiv').style.display = 'block';
