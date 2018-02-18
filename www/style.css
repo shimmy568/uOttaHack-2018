@@ -1,19 +1,7 @@
-<<<<<<< HEAD
-div.form
-{
-    display: block;
-    text-align: center;
-}
-form
-{
-    display: inline-block;
-    text-align: left;
-}
-=======
->>>>>>> cc26fca3f9ef1c2146afcd614140c02404d3e501
 
 body{
     background-color: darkslategrey;
+   
 }
 
 #main{
