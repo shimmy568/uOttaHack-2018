@@ -16,6 +16,7 @@ function dropin() {
         data: postData,
         success: function (data) {
             console.log(data);
+            pageLoad();
         }
     });
 }
@@ -26,6 +27,13 @@ function pageLoad(){
         url: '/app/login',
         success: function (data) {
             console.log(data);
+            data.spotInLine
+            if (data == false){
+                show('Page1','Page2');
+            }
+            else{
+                show('Page2','Page1');
+            }
         }
     });
 }
