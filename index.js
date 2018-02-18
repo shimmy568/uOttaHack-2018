@@ -20,8 +20,10 @@ app.get('/app/update', (req, res) => {
         res.json(false);
     }else{
         userManager.loginUser(datastore, parseInt(req.cookies.userID, 10)).then((data) => {
+            console.log(data);
             res.json(data);
         }).catch((err) => {
+            console.log(err);
             res.json({
                 error: "lots"
             });
@@ -58,7 +60,7 @@ app.post('/app/docNext', (req, res) => {
         return;
     }else{
         let long = req.cookies.docLogin;
-        let username = long.slice(long.indexOf(':'))
+        let username = long.slice(0, long.indexOf(':'))
         let password = long.slice(long.indexOf(':') + 1, long.length);
         doctorManager.getNextPatient(datastore, username, password).then((user) => {
             res.json(user);

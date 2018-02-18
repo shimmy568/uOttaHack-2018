@@ -41,11 +41,11 @@ function loginUser(datastore, key) {
         let query = datastore.createQuery('User').filter('__key__', '=', datastore.key(['User', key]));
         datastore.runQuery(query).then((data) => {
             const tasks = data[0];
-            if (tasks == []) {
+            let userLoggingIn = tasks[0];
+            if (userLoggingIn == null) {
                 res(false);
                 return;
             }
-            let userLoggingIn = tasks[0];
             if (userLoggingIn['Being served by'] != -1) {
                 let docQu = datastore.createQuery('Doctor').filter('__key__', '=', datastore.key(['Doctor', userLoggingIn['Being served by']]));
                 datastore.runQuery(docQu).then((data) => {
@@ -80,10 +80,9 @@ function loginUser(datastore, key) {
 }
 
 function removeUser(datastore, key) {
-    console.log(key);
     return new Promise((res, rej) => {
-        let keyDel = datastore.key(['User', key]);
-        datastore.delete(keyDel).then(() => {
+        let keyDel = datastore.key(['User', parseInt(key, 10)]);
+        datastore.delete(keyDel).then((d) => {
             res();
         }).catch((err) => {
             rej(err);

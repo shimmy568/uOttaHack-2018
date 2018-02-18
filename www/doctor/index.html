@@ -20,20 +20,26 @@
 </head>
 
 <body>
-    <div class="centerDivMain">
+    <div class="center-align centerDivMain valign-wrapper">
         <div id="loginDiv" class="twoChoice">
             <div class="input-field col s6">
                 <input id="username" type="text" class="validate">
-                <label for="last_name">Username</label>
+                <label for="username">Username</label>
             </div>
             <div class="input-field col s6">
                 <input id="password" type="text" class="validate">
-                <label type="password" for="last_name">Password</label>
+                <label type="password" for="password">Password</label>
             </div>
             <a onclick="login()" class="waves-effect waves-light btn">Log In</a>
         </div>
         <div id="doctorDiv" class="twoChoice">
-            <h1>DocTorShit</h1>
+            <div id="infoDiv" class="panelDivs">
+                <h3>Now serving: </h3>
+                <h4>Name: <span id="name"></span></h4>
+                <h4>Student number: <span id="studentNumber"></span></h4>
+                <h4>Health card number: <span id="healthCard"></span></h4>
+            </div>
+            <a onclick="callNextIn()" class="waves-effect waves-light btn">Call next patient in</a>
         </div>
     </div>
 </body>
