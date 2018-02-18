@@ -39,7 +39,7 @@ function timeCount(s){
 function pageLoad(){
     $.ajax({
         type: "GET",
-        url: '/app/login',
+        url: '/app/update',
         success: function (data) {
             console.log(data);
             if (data == false){
@@ -50,7 +50,7 @@ function pageLoad(){
                 document.getElementById('count').innerText = data.spotInLine;
                 timeCount(data.spotInLine); 
                 timeoutLoop();
-                if (spotInLine != null) {
+                if (data.spotInLine != null) {
                     show('line', 'noLine');
                 }
                 else{
