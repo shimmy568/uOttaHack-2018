@@ -42,6 +42,9 @@ function loginUser(datastore, key) {
         let query = datastore.createQuery('User').filter('__key__', '=', datastore.key(['User', key]));
         datastore.runQuery(query).then((data) => {
             const tasks = data[0];
+            if(tasks == []){
+                res(false);
+            }
             let userLoggingIn = tasks[0];
             let bigQuery = datastore.createQuery('User').filter('Being served by', '=', -1).order('created');
             datastore.runQuery(bigQuery).then((data) => {

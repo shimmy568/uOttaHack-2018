@@ -12,9 +12,20 @@ const app = express();
 
 app.use(express.static("www"));
 app.use(bodyParser.urlencoded());
+app.use(express.cookieParser());
 
 app.get('/app/login', (req, res) => {
-
+    if(req.cookies.userID == null){
+        res.json(false);
+    }else{
+        userManager.loginUser(datastore, req.cookies.userID).then((data) => {
+            res.json(data);
+        }).catch((err) => {
+            res.json({
+                error: "lots"
+            });
+        });
+    }
 });
 
 app.post('/app/register', (req, res) => {
@@ -23,10 +34,9 @@ app.post('/app/register', (req, res) => {
         healthCard: parseInt(req.body.healthNumber, 10),
         studentNumber: parseInt(req.body.studentNumber, 10)
     }
-    console.log("hey");
     userManager.registerUser(datastore, loginData).then((resp) => {
-        console.log(';)');
-        res.json(resp);
+        res.cookie('userID', resp, {httpOnly: true});
+        res.json("done");
     }).catch((err) => {
         res.json({
             error: 'lots'
