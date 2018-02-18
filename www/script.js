@@ -19,3 +19,14 @@ function dropin() {
         }
     });
 }
+
+function pageLoad(){
+    $.ajax({
+        type: "GET",
+        url: '/app/login',
+        success: function (data) {
+            console.log(data);
+        }
+    });
+}
+pageLoad();
