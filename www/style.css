@@ -10,3 +10,18 @@ form
     margin-right: auto;
     text-align: left;
 }
+
+body{
+
+    text-align: center; 
+    margin-top: 100px;
+    background-color: darkslategrey;
+    vertical-align: text-top;
+    padding-top: 4cm;
+}
+
+.centerDivMain{
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
