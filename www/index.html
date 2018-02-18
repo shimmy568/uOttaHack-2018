@@ -29,36 +29,36 @@
                     <label for="last_name">Name</label>
                 </div>
                 <div class="input-field col s6">
+                    <input class="validate" type="number" size="20" id="hCard">
                     <label for="pwd">Health Card Number</label>
-                    <input class="form-control" type="number" size="20" id="hCard">
                 </div>
                 <div class="input-field col s6">
+                    <input class="validate" type="number" size="20" id="sCard">
                     <label for="pwd">Student Number</label>
-                    <input class="form-control" type="number" size="20" id="sCard">
                 </div>
+                <button onclick="dropin()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
             </div>
-            <button onclick="dropisn()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
-        </div>
-        <div id="Page2" style="display:none">
-            <div id="line">
-                <h1 class="spot" id='spot'>
-                    Spot In Line -
-                    <span id='count'></span>
-                </h1>
-                <h1 class="spot" id='wait'>
-                    Estimated Wait Time -
-                    <span id='waitTime'></span>
-                </h1>
-            </div>
-            <div id="noLine" style="display:none">
-                <h1 class "spot" id='room'>
-                    Room Number -
-                    <span id='roomNum'></span>
-                </h1>
-                <h1 class "spot" id='doc'>
-                    Doctor Name -
-                    <span id='docName'></span>
-                </h1>
+            <div id="Page2" style="display:none">
+                <div id="line">
+                    <h4 class="spot" id='spot'>
+                        Spot In Line
+                    </h4>
+                    <h5 id="count"></h4>
+                    <h4 class="spot" id='wait'>
+                        Estimated Wait Time
+                    </h4>
+                    <h5 id="waitTime"></h4>
+                </div>
+                <div id="noLine" style="display:none">
+                    <h4 class "spot" id='room'>
+                        Room Number
+                    </h4>
+                    <h5 id="roomNum"></h5>
+                    <h4 class "spot" id='doc'>
+                        Doctor Name
+                    </h4>
+                    <h5 id="docName"></h5>
+                </div>
             </div>
         </div>
     </div>

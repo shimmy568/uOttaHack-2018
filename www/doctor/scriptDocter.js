@@ -87,7 +87,7 @@ function updateQueueLength() {
             }else if(data == 1){
                 document.getElementById('queueLen').innerText = "There is 1 person waiting";
             } else {
-                document.getElementById('queueLen').innerText = "There are " + data + " person waiting";
+                document.getElementById('queueLen').innerText = "There are " + data + " people waiting";
             }
             setTimeout(() => {
                 updateQueueLength();
