@@ -25,27 +25,31 @@
 
         <div class="centerDivMain">
 
-            <div class="container">
-                <div class="col-md-offset-5 col-md-5">
+            <div class="center-align centerDivMain valign-wrapper">
 
 
-                    <div class="input-field col s6">
-                        <input id="name" type="text" class="validate">
-                        <label for="last_name">Name</label>
+                <div id="container">
+
+                    <div class="col-md-offset-5 col-md-5">
+
+                        <div class="input-field col s6">
+                            <input id="name" type="text" class="validate">
+                            <label for="last_name">Name</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <label for="pwd">Health Card Number</label>
+                            <input class="form-control" type="number" size="20" id="hCard">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <label for="pwd">Student Number</label>
+                            <input class="form-control" type="number" size="20" id="sCard">
+                        </div>
                     </div>
-
-                    <div class="input-field col s6">
-                        <label for="pwd">Health Card Number</label>
-                        <input class="form-control" type="number" size="20" id="hCard">
-                    </div>
-
-                    <div class="input-field col s6">
-                        <label for="pwd">Student Number</label>
-                        <input class="form-control" type="number" size="20" id="sCard">
-                    </div>
+                    <button onclick="dropisn()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
                 </div>
             </div>
-            <button onclick="dropin()" type="button" class="btn btn-default waves-effect waves-light">DROP IN </button>
         </div>
     </div>
 

@@ -14,6 +14,9 @@ form
 body{
 
     text-align: center; 
+    position: fixed;
+    width: 100%;
+    height: 100%;
     margin-top: 100px;
     background-color: darkslategrey;
     vertical-align: text-top;
@@ -24,4 +27,11 @@ body{
     width: 90%;
     max-width: 400px;
     margin: auto;
+}
+
+#maincontainer{
+    max-width: 350px;
+    width: 90%;
+    margin: auto;
+    display: none;
 }
