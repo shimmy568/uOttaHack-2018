@@ -12,3 +12,7 @@ body{
     max-width: 400px;
     margin: auto;
 }
+
+.twoChoice{
+    display: none;
+}
