@@ -20,7 +20,8 @@ body{
 }
 
 #queueLen{
-    font-size: 12pt;
+    font-size: 18pt;
+    width: 100%;
     position: absolute;
     top: 10px;
     left: 50%;
